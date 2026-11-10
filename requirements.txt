@@ -1,0 +1,26 @@
+# requirements.txt - Python packages needed to run the project.
+# Install with:  pip install -r requirements.txt
+# Tested on Python 3.11-3.13 with both pandas 2.2 and pandas 3.0.
+
+# Data handling and statistics
+pandas>=2.2,<4
+numpy>=2.0
+scipy>=1.13
+scikit-learn>=1.5        # KNNImputer, StandardScaler
+
+# Reading the Excel file and writing Parquet
+openpyxl>=3.1
+pyarrow>=17
+
+# Data contracts (Phase 3)
+pandera>=0.24
+
+# Figures
+matplotlib>=3.9
+
+# Notebook (run it in VS Code or Jupyter)
+ipykernel>=6.29
+nbconvert>=7.16
+
+# Tests
+pytest>=8
