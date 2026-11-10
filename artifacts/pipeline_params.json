@@ -1,0 +1,205 @@
+{
+  "rows_in": 1200,
+  "rows_dropped": 0,
+  "missing_strategies": [
+    {
+      "column": "CouponCode",
+      "missing_count": 309,
+      "missing_pct": 25.75,
+      "strategy": "structural_fill"
+    },
+    {
+      "column": "OrderID",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "CustomerID",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "Product",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "Quantity",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "Date",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "UnitPrice",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "ShippingAddress",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "OrderStatus",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "PaymentMethod",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "TrackingNumber",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "ItemsInCart",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "ReferralSource",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "column": "TotalPrice",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "strategy": "none"
+    }
+  ],
+  "structural_fill": {
+    "CouponCode": "NONE"
+  },
+  "start_date": "2023-01-01",
+  "outlier_bounds": {
+    "TotalPrice": {
+      "lower": -1341.4125,
+      "upper": 3330.4075
+    }
+  },
+  "outlier_counts": {
+    "TotalPrice": {
+      "below": 0,
+      "above": 8
+    }
+  },
+  "categories": {
+    "Product": [
+      "Chair",
+      "Desk",
+      "Laptop",
+      "Monitor",
+      "Phone",
+      "Printer",
+      "Tablet"
+    ],
+    "PaymentMethod": [
+      "Cash",
+      "Credit Card",
+      "Debit Card",
+      "Gift Card",
+      "Online"
+    ],
+    "OrderStatus": [
+      "Cancelled",
+      "Delivered",
+      "Pending",
+      "Returned",
+      "Shipped"
+    ],
+    "CouponCode": [
+      "FREESHIP",
+      "NONE",
+      "SAVE10",
+      "WINTER15"
+    ],
+    "ReferralSource": [
+      "Email",
+      "Facebook",
+      "Google",
+      "Instagram",
+      "Referral"
+    ]
+  },
+  "reference_category": {
+    "Product": "Printer",
+    "PaymentMethod": "Online",
+    "OrderStatus": "Cancelled",
+    "CouponCode": "FREESHIP",
+    "ReferralSource": "Instagram"
+  },
+  "collinear_dropped": [
+    "CouponCode_NONE",
+    "QuantityShareOfCart"
+  ],
+  "collinearity_pairs": [
+    {
+      "feature_a": "HasCoupon",
+      "feature_b": "CouponCode_NONE",
+      "abs_corr": 1.0,
+      "a_avg_corr": 0.0735,
+      "b_avg_corr": 0.0735,
+      "dropped": "CouponCode_NONE"
+    },
+    {
+      "feature_a": "OtherItemsInCart",
+      "feature_b": "QuantityShareOfCart",
+      "abs_corr": 0.8381,
+      "a_avg_corr": 0.0712,
+      "b_avg_corr": 0.0773,
+      "dropped": "QuantityShareOfCart"
+    }
+  ],
+  "feature_columns": [
+    "Quantity",
+    "UnitPrice",
+    "ItemsInCart",
+    "TotalPrice",
+    "OrderMonth",
+    "OrderDayOfWeek",
+    "IsWeekend",
+    "DaysSinceStart",
+    "HasCoupon",
+    "OtherItemsInCart",
+    "Product_Chair",
+    "Product_Desk",
+    "Product_Laptop",
+    "Product_Monitor",
+    "Product_Phone",
+    "Product_Tablet",
+    "PaymentMethod_Cash",
+    "PaymentMethod_Credit_Card",
+    "PaymentMethod_Debit_Card",
+    "PaymentMethod_Gift_Card",
+    "OrderStatus_Delivered",
+    "OrderStatus_Pending",
+    "OrderStatus_Returned",
+    "OrderStatus_Shipped",
+    "CouponCode_SAVE10",
+    "CouponCode_WINTER15",
+    "ReferralSource_Email",
+    "ReferralSource_Facebook",
+    "ReferralSource_Google",
+    "ReferralSource_Referral"
+  ]
+}

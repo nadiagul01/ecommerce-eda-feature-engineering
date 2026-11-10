@@ -1,0 +1,5 @@
+column,skewness,iqr_lower,iqr_upper,iqr_outliers,zscore_outliers,max_value
+Quantity,0.028,-1.0,7.0,0,0,5.0
+UnitPrice,-0.027,-317.2,1024.83,0,0,699.93
+ItemsInCart,0.001,-0.5,11.5,0,0,10.0
+TotalPrice,0.891,-1341.41,3330.41,8,0,3456.4

@@ -1,0 +1,5 @@
+method,MAE_on_hidden,RMSE_on_hidden,std_after,KS_vs_true
+True values (reference),0.0,0.0,2.282,0.0
+Mean,1.925,2.309,2.099,0.08
+Median,1.95,2.379,2.106,0.079
+KNN (k=5),1.64,1.914,2.197,0.025
