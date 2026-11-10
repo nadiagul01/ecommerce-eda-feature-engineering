@@ -1,0 +1,34 @@
+# tests.yml - GitHub Actions: on every push, install the project on a fresh
+# machine, run the pipeline, run the tests and execute the notebook.
+# A green check on GitHub proves the project works outside your own laptop.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run the pipeline
+        run: python main.py --no-report
+
+      - name: Run the tests
+        run: pytest
+
+      - name: Execute the notebook end to end
+        run: jupyter nbconvert --to notebook --execute notebooks/01_eda_feature_engineering.ipynb --output-dir /tmp
